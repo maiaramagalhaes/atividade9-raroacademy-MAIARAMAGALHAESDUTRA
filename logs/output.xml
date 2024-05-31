@@ -1,0 +1,998 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-05-30T17:06:12.643194" rpa="false" schemaversion="5">
+<suite id="s1" name="Nuclone" source="C:\academy\Nuclone">
+<suite id="s1-s1" name="Android" source="C:\academy\Nuclone\android">
+<suite id="s1-s1-s1" name="Feature" source="C:\academy\Nuclone\android\feature">
+<suite id="s1-s1-s1-s1" name="homeTest" source="C:\academy\Nuclone\android\feature\homeTest.robot">
+<test id="s1-s1-s1-s1-t1" name="CT001 - Visualizar informacoes pessoais" line="10">
+<kw name="Abrir App" owner="config" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://127.0.0.1:4723</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION}</arg>
+<arg>appActivity=${ANDROID_APP_ACTIVITY}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-05-30T17:06:12.873796" elapsed="7.078707"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:06:12.873796" elapsed="7.078707"/>
+</kw>
+<kw name="Dado que o cliente acessou a pagina inicial" owner="homePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:06:20.928180" level="INFO">xpath criteria: //android.widget.ScrollView/android.view.View[1]</msg>
+<arg>${ICONE_PESSOA}</arg>
+<arg>10</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-05-30T17:06:19.952503" elapsed="0.975677"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:06:19.952503" elapsed="0.975677"/>
+</kw>
+<kw name="Entao ele deve visualizar seu nome" owner="homePage">
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<arg>${MSG_OLA}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2024-05-30T17:06:20.928180" elapsed="0.065247"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:06:20.928180" elapsed="0.065247"/>
+</kw>
+<kw name="Teardown" owner="config" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-05-30T17:06:20.993427" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2024-05-30T17:06:20.993427" elapsed="0.424649"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:06:20.993427" elapsed="0.424649"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:06:12.873796" elapsed="8.544280"/>
+</test>
+<test id="s1-s1-s1-s1-t2" name="CT002 - Visualizar carrocel de atalhos" line="14">
+<kw name="Abrir App" owner="config" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://127.0.0.1:4723</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION}</arg>
+<arg>appActivity=${ANDROID_APP_ACTIVITY}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-05-30T17:06:21.418076" elapsed="6.967834"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:06:21.418076" elapsed="6.967834"/>
+</kw>
+<kw name="Dado que o cliente acessou a pagina inicial" owner="homePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:06:29.284482" level="INFO">xpath criteria: //android.widget.ScrollView/android.view.View[1]</msg>
+<arg>${ICONE_PESSOA}</arg>
+<arg>10</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-05-30T17:06:28.389543" elapsed="0.894939"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:06:28.389543" elapsed="0.894939"/>
+</kw>
+<kw name="Entao ele deve visualizar o menu de atalhos" owner="homePage">
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:06:29.399443" level="INFO">xpath criteria: //android.widget.ScrollView/android.widget.HorizontalScrollView[1]</msg>
+<arg>${MENU_CARROCEL}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2024-05-30T17:06:29.284482" elapsed="0.114961"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:06:29.284482" elapsed="0.114961"/>
+</kw>
+<kw name="Teardown" owner="config" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-05-30T17:06:29.399443" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2024-05-30T17:06:29.399443" elapsed="0.433183"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:06:29.399443" elapsed="0.433183"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:06:21.418076" elapsed="8.414550"/>
+</test>
+<test id="s1-s1-s1-s1-t3" name="CT003 - Visualizar a opçao meus cartoes" line="18">
+<kw name="Abrir App" owner="config" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://127.0.0.1:4723</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION}</arg>
+<arg>appActivity=${ANDROID_APP_ACTIVITY}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-05-30T17:06:29.832626" elapsed="6.852091"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:06:29.832626" elapsed="6.852091"/>
+</kw>
+<kw name="Dado que o cliente acessou a pagina inicial" owner="homePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:06:37.670773" level="INFO">xpath criteria: //android.widget.ScrollView/android.view.View[1]</msg>
+<arg>${ICONE_PESSOA}</arg>
+<arg>10</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-05-30T17:06:36.684717" elapsed="0.986056"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:06:36.684717" elapsed="0.986056"/>
+</kw>
+<kw name="Entao ele deve visualizar o botao meus cartoes" owner="homePage">
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:06:37.802613" level="INFO">xpath criteria: //android.view.View[@content-desc="Meus cartões"]</msg>
+<arg>${BOTAO_MEU_CARTOES}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2024-05-30T17:06:37.670773" elapsed="0.131840"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:06:37.670773" elapsed="0.131840"/>
+</kw>
+<kw name="Teardown" owner="config" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-05-30T17:06:37.802613" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2024-05-30T17:06:37.802613" elapsed="0.398710"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:06:37.802613" elapsed="0.398710"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:06:29.832626" elapsed="8.368697"/>
+</test>
+<test id="s1-s1-s1-s1-t4" name="CT004 - Visualizar a opcao emprestimos" line="22">
+<kw name="Abrir App" owner="config" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://127.0.0.1:4723</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION}</arg>
+<arg>appActivity=${ANDROID_APP_ACTIVITY}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-05-30T17:06:38.209761" elapsed="6.733853"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:06:38.209330" elapsed="6.734284"/>
+</kw>
+<kw name="Dado que o cliente acessou a pagina inicial" owner="homePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:06:45.912653" level="INFO">xpath criteria: //android.widget.ScrollView/android.view.View[1]</msg>
+<arg>${ICONE_PESSOA}</arg>
+<arg>10</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-05-30T17:06:44.943614" elapsed="0.969039"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:06:44.943614" elapsed="0.969039"/>
+</kw>
+<kw name="Entao ele deve visualizar o botao limite disponivel para emprestimo" owner="homePage">
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:06:46.036371" level="INFO">xpath criteria: //android.view.View[@content-desc="Você tem R$ 10.000,00 disponíveis para empréstimo."]</msg>
+<arg>${BOTAO_LIMITE_EMPRESTIMO}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2024-05-30T17:06:45.912653" elapsed="0.123718"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:06:45.912653" elapsed="0.123718"/>
+</kw>
+<kw name="Teardown" owner="config" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-05-30T17:06:46.036371" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2024-05-30T17:06:46.036371" elapsed="0.440415"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:06:46.036371" elapsed="0.440415"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:06:38.201323" elapsed="8.275463"/>
+</test>
+<test id="s1-s1-s1-s1-t5" name="CT005 - Visualizar a opcao cartao de credito" line="26">
+<kw name="Abrir App" owner="config" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://127.0.0.1:4723</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION}</arg>
+<arg>appActivity=${ANDROID_APP_ACTIVITY}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-05-30T17:06:46.478887" elapsed="6.917617"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:06:46.478887" elapsed="6.917617"/>
+</kw>
+<kw name="Dado que o cliente acessou a pagina inicial" owner="homePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:06:54.373194" level="INFO">xpath criteria: //android.widget.ScrollView/android.view.View[1]</msg>
+<arg>${ICONE_PESSOA}</arg>
+<arg>10</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-05-30T17:06:53.396504" elapsed="0.976690"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:06:53.396504" elapsed="0.976690"/>
+</kw>
+<kw name="Entao ele deve visualizar o botao cartao de credito" owner="homePage">
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:06:54.488849" level="INFO">xpath criteria: //android.view.View[contains(@content-desc,"Cartão de Crédito")]</msg>
+<arg>${BOTAO_CARTAO}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2024-05-30T17:06:54.374089" elapsed="0.114760"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:06:54.374089" elapsed="0.114760"/>
+</kw>
+<kw name="Teardown" owner="config" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-05-30T17:06:54.488849" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2024-05-30T17:06:54.488849" elapsed="0.440517"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:06:54.488849" elapsed="0.440517"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:06:46.478887" elapsed="8.450479"/>
+</test>
+<test id="s1-s1-s1-s1-t6" name="CT006 - Visulizar a opcao emprestimo" line="30">
+<kw name="Abrir App" owner="config" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://127.0.0.1:4723</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION}</arg>
+<arg>appActivity=${ANDROID_APP_ACTIVITY}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-05-30T17:06:54.929366" elapsed="6.631135"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:06:54.929366" elapsed="6.631135"/>
+</kw>
+<kw name="Dado que o cliente acessou a pagina inicial" owner="homePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:07:02.554322" level="INFO">xpath criteria: //android.widget.ScrollView/android.view.View[1]</msg>
+<arg>${ICONE_PESSOA}</arg>
+<arg>10</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-05-30T17:07:01.560501" elapsed="0.993821"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:07:01.560501" elapsed="0.993821"/>
+</kw>
+<kw name="Entao deve visualizar o botao emprestimo" owner="homePage">
+<kw name="Swipe By Percent" owner="AppiumLibrary">
+<arg>50</arg>
+<arg>50</arg>
+<arg>50</arg>
+<arg>-75</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" start="2024-05-30T17:07:02.554322" elapsed="1.357550"/>
+</kw>
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:07:05.288185" level="INFO">xpath criteria: //android.view.View[contains(@content-desc,"Empréstimo")]</msg>
+<arg>${BOTAO_EMPRESTIMO}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2024-05-30T17:07:03.911872" elapsed="1.376313"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:07:02.554322" elapsed="2.733863"/>
+</kw>
+<kw name="Teardown" owner="config" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-05-30T17:07:05.288185" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2024-05-30T17:07:05.288185" elapsed="0.603538"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:07:05.288185" elapsed="0.603538"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:06:54.929366" elapsed="10.962357"/>
+</test>
+<test id="s1-s1-s1-s1-t7" name="CT007 - Visualizar a opcao investimentos" line="34">
+<kw name="Abrir App" owner="config" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://127.0.0.1:4723</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION}</arg>
+<arg>appActivity=${ANDROID_APP_ACTIVITY}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-05-30T17:07:05.891723" elapsed="6.869701"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:07:05.891723" elapsed="6.869701"/>
+</kw>
+<kw name="Dado que o cliente acessou a pagina inicial" owner="homePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:07:13.738938" level="INFO">xpath criteria: //android.widget.ScrollView/android.view.View[1]</msg>
+<arg>${ICONE_PESSOA}</arg>
+<arg>10</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-05-30T17:07:12.761424" elapsed="0.977514"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:07:12.761424" elapsed="0.977514"/>
+</kw>
+<kw name="Entao deve visualizar o botao investimentos" owner="homePage">
+<kw name="Swipe By Percent" owner="AppiumLibrary">
+<arg>50</arg>
+<arg>50</arg>
+<arg>50</arg>
+<arg>-75</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" start="2024-05-30T17:07:13.738938" elapsed="1.358685"/>
+</kw>
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:07:16.430916" level="INFO">xpath criteria: //android.view.View[contains(@content-desc,"Investimentos")]</msg>
+<arg>${BOTAO_INVESTIMENTOS}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2024-05-30T17:07:15.097623" elapsed="1.333293"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:07:13.738938" elapsed="2.691978"/>
+</kw>
+<kw name="Teardown" owner="config" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-05-30T17:07:16.430916" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2024-05-30T17:07:16.430916" elapsed="0.490253"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:07:16.430916" elapsed="0.498254"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:07:05.891723" elapsed="11.037447"/>
+</test>
+<test id="s1-s1-s1-s1-t8" name="CT008 - Visualizar a opcao seguro de vida" line="38">
+<kw name="Abrir App" owner="config" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://127.0.0.1:4723</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION}</arg>
+<arg>appActivity=${ANDROID_APP_ACTIVITY}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-05-30T17:07:16.930947" elapsed="6.995218"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:07:16.930947" elapsed="6.995218"/>
+</kw>
+<kw name="Dado que o cliente acessou a pagina inicial" owner="homePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:07:24.950231" level="INFO">xpath criteria: //android.widget.ScrollView/android.view.View[1]</msg>
+<arg>${ICONE_PESSOA}</arg>
+<arg>10</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-05-30T17:07:23.926165" elapsed="1.024066"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:07:23.926165" elapsed="1.024066"/>
+</kw>
+<kw name="Entao deve visualizar o botao seguro de vida" owner="homePage">
+<kw name="Swipe By Percent" owner="AppiumLibrary">
+<arg>50</arg>
+<arg>50</arg>
+<arg>50</arg>
+<arg>-75</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" start="2024-05-30T17:07:24.950231" elapsed="1.351255"/>
+</kw>
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:07:27.627682" level="INFO">xpath criteria: //android.view.View[contains(@content-desc,"Seguro de vida")]</msg>
+<arg>${BOTAO_SEGURO_DE_VIDA}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2024-05-30T17:07:26.301486" elapsed="1.326196"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:07:24.950231" elapsed="2.677451"/>
+</kw>
+<kw name="Teardown" owner="config" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-05-30T17:07:27.627682" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2024-05-30T17:07:27.627682" elapsed="0.621143"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:07:27.627682" elapsed="0.621143"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:07:16.930947" elapsed="11.317878"/>
+</test>
+<test id="s1-s1-s1-s1-t9" name="CT009 - Visualizar a opcao descubra mais" line="42">
+<kw name="Abrir App" owner="config" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://127.0.0.1:4723</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION}</arg>
+<arg>appActivity=${ANDROID_APP_ACTIVITY}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-05-30T17:07:28.248825" elapsed="7.780957"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:07:28.248825" elapsed="7.780957"/>
+</kw>
+<kw name="Dado que o cliente acessou a pagina inicial" owner="homePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:07:37.057440" level="INFO">xpath criteria: //android.widget.ScrollView/android.view.View[1]</msg>
+<arg>${ICONE_PESSOA}</arg>
+<arg>10</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-05-30T17:07:36.037904" elapsed="1.019536"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:07:36.037904" elapsed="1.019536"/>
+</kw>
+<kw name="Entao deve visualizar o opcao descubra mais" owner="homePage">
+<kw name="Swipe By Percent" owner="AppiumLibrary">
+<arg>50</arg>
+<arg>50</arg>
+<arg>50</arg>
+<arg>-75</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" start="2024-05-30T17:07:37.058541" elapsed="1.351451"/>
+</kw>
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:07:39.789344" level="INFO">xpath criteria: //android.view.View[@content-desc="Descubra mais"]</msg>
+<arg>${BOTAO_DESCUBRA_MAIS}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2024-05-30T17:07:38.409992" elapsed="1.379352"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:07:37.057440" elapsed="2.731904"/>
+</kw>
+<kw name="Teardown" owner="config" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-05-30T17:07:39.790176" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2024-05-30T17:07:39.790176" elapsed="0.562201"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:07:39.790176" elapsed="0.562201"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:07:28.248825" elapsed="12.103552"/>
+</test>
+<test id="s1-s1-s1-s1-t10" name="CT010 - Visualizar opcoes do carroel de atalhos" line="46">
+<kw name="Abrir App" owner="config" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://127.0.0.1:4723</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION}</arg>
+<arg>appActivity=${ANDROID_APP_ACTIVITY}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-05-30T17:07:40.352377" elapsed="7.129653"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:07:40.352377" elapsed="7.129653"/>
+</kw>
+<kw name="Dado que o cliente acessou a pagina inicial" owner="homePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:07:48.459106" level="INFO">xpath criteria: //android.widget.ScrollView/android.view.View[1]</msg>
+<arg>${ICONE_PESSOA}</arg>
+<arg>10</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-05-30T17:07:47.482030" elapsed="0.977076"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:07:47.482030" elapsed="0.977076"/>
+</kw>
+<kw name="Entao deve visualizar as opcoes do carrocel de atalhos" owner="homePage">
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:07:48.576836" level="INFO">xpath criteria: //android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[1]</msg>
+<arg>${BOTAO_PIX}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2024-05-30T17:07:48.459106" elapsed="0.117730"/>
+</kw>
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:07:48.683683" level="INFO">xpath criteria: //android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[2]</msg>
+<arg>${BOTAO_PAGAR}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2024-05-30T17:07:48.576836" elapsed="0.106847"/>
+</kw>
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:07:48.783889" level="INFO">xpath criteria: //android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[3]</msg>
+<arg>${BOTAO_TRANSFERIR}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2024-05-30T17:07:48.683683" elapsed="0.100206"/>
+</kw>
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:07:48.925433" level="INFO">xpath criteria: //android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[4]</msg>
+<arg>${BOTAO_DEPOSITAR}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2024-05-30T17:07:48.783889" elapsed="0.141544"/>
+</kw>
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:07:49.033742" level="INFO">xpath criteria: //android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[5]</msg>
+<arg>${BOTAO_EMPRESTIMOS}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2024-05-30T17:07:48.925433" elapsed="0.108309"/>
+</kw>
+<kw name="Swipe By Percent" owner="AppiumLibrary">
+<arg>50</arg>
+<arg>50</arg>
+<arg>-5</arg>
+<arg>50</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" start="2024-05-30T17:07:49.033742" elapsed="1.344599"/>
+</kw>
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:07:51.042266" level="INFO">xpath criteria: //android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[2]</msg>
+<arg>${BOTAO_RECARGA_CELULAR}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2024-05-30T17:07:50.378341" elapsed="0.663925"/>
+</kw>
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:07:51.176017" level="INFO">xpath criteria: //android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[3]</msg>
+<arg>${BOTAO_COBRAR}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2024-05-30T17:07:51.042266" elapsed="0.141866"/>
+</kw>
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:07:51.317412" level="INFO">xpath criteria: //android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[4]</msg>
+<arg>${BOTAO_DOACAO}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2024-05-30T17:07:51.184132" elapsed="0.133280"/>
+</kw>
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:07:51.442275" level="INFO">xpath criteria: //android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[5]</msg>
+<arg>${BOTAO_ENCONTAR_AMIGOS}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2024-05-30T17:07:51.317412" elapsed="0.124863"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:07:48.459106" elapsed="2.983169"/>
+</kw>
+<kw name="Teardown" owner="config" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-05-30T17:07:51.442275" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2024-05-30T17:07:51.442275" elapsed="0.571637"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:07:51.442275" elapsed="0.571637"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:07:40.352377" elapsed="11.661535"/>
+</test>
+<test id="s1-s1-s1-s1-t11" name="CT011 - Visualizar opcao ocultar saldo" line="50">
+<kw name="Abrir App" owner="config" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://127.0.0.1:4723</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION}</arg>
+<arg>appActivity=${ANDROID_APP_ACTIVITY}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-05-30T17:07:52.016923" elapsed="7.012000"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:07:52.016923" elapsed="7.012000"/>
+</kw>
+<kw name="Dado que o cliente acessou a pagina inicial" owner="homePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:08:00.403106" level="INFO">xpath criteria: //android.widget.ScrollView/android.view.View[1]</msg>
+<arg>${ICONE_PESSOA}</arg>
+<arg>10</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-05-30T17:07:59.028923" elapsed="1.374183"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:07:59.028923" elapsed="1.374183"/>
+</kw>
+<kw name="Quando clica no botao ocultar saldo" owner="homePage">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-05-30T17:08:00.403106" level="INFO">Clicking element 'xpath=//android.widget.ScrollView/android.widget.Button[1]'.</msg>
+<msg time="2024-05-30T17:08:01.089914" level="INFO">xpath criteria: //android.widget.ScrollView/android.widget.Button[1]</msg>
+<arg>${BOTAO_OCULTAR_SALDO}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-05-30T17:08:00.403106" elapsed="0.686808"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:08:00.403106" elapsed="0.686808"/>
+</kw>
+<kw name="Entao o saldo nao ser visualizado" owner="homePage">
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:08:01.213857" level="INFO">xpath criteria: //android.view.View[@content-desc="Conta"]</msg>
+<arg>${BOTAO_CONTA}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2024-05-30T17:08:01.089914" elapsed="0.123943"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:08:01.089914" elapsed="0.123943"/>
+</kw>
+<kw name="Teardown" owner="config" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-05-30T17:08:01.213857" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2024-05-30T17:08:01.213857" elapsed="0.604179"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:08:01.213857" elapsed="0.604179"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:07:52.016923" elapsed="9.801113"/>
+</test>
+<test id="s1-s1-s1-s1-t12" name="CT012 - Visualizar opcao duvidas" line="55">
+<kw name="Abrir App" owner="config" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://127.0.0.1:4723</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION}</arg>
+<arg>appActivity=${ANDROID_APP_ACTIVITY}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-05-30T17:08:01.827884" elapsed="6.855875"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:08:01.826158" elapsed="6.857601"/>
+</kw>
+<kw name="Dado que o cliente acessou a pagina inicial" owner="homePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:08:09.674747" level="INFO">xpath criteria: //android.widget.ScrollView/android.view.View[1]</msg>
+<arg>${ICONE_PESSOA}</arg>
+<arg>10</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-05-30T17:08:08.683759" elapsed="0.990988"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:08:08.683759" elapsed="0.990988"/>
+</kw>
+<kw name="Entao deve visualizar a opcao duvidas" owner="homePage">
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:08:09.782683" level="INFO">xpath criteria: //android.widget.ScrollView/android.widget.Button[2]</msg>
+<arg>${BOTAO_DUVIDAS}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2024-05-30T17:08:09.674747" elapsed="0.107936"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:08:09.674747" elapsed="0.107936"/>
+</kw>
+<kw name="Teardown" owner="config" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-05-30T17:08:09.782683" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2024-05-30T17:08:09.782683" elapsed="0.430660"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:08:09.782683" elapsed="0.430660"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:08:01.826158" elapsed="8.387185"/>
+</test>
+<test id="s1-s1-s1-s1-t13" name="CT013 - Visualizar opcao resgatar amigos" line="59">
+<kw name="Abrir App" owner="config" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://127.0.0.1:4723</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION}</arg>
+<arg>appActivity=${ANDROID_APP_ACTIVITY}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-05-30T17:08:10.221478" elapsed="6.748050"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:08:10.221478" elapsed="6.748050"/>
+</kw>
+<kw name="Dado que o cliente acessou a pagina inicial" owner="homePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:08:17.962100" level="INFO">xpath criteria: //android.widget.ScrollView/android.view.View[1]</msg>
+<arg>${ICONE_PESSOA}</arg>
+<arg>10</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-05-30T17:08:16.969528" elapsed="0.992572"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:08:16.969528" elapsed="0.992572"/>
+</kw>
+<kw name="Entao deve visualizar a opcao resgatar amigos" owner="homePage">
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:08:18.069722" level="INFO">xpath criteria: //android.widget.ScrollView/android.widget.Button[3]</msg>
+<arg>${BOTAO_ENVELOPE}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2024-05-30T17:08:17.962100" elapsed="0.107622"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:08:17.962100" elapsed="0.107622"/>
+</kw>
+<kw name="Teardown" owner="config" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-05-30T17:08:18.069722" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2024-05-30T17:08:18.069722" elapsed="0.422333"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:08:18.069722" elapsed="0.422333"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:08:10.213343" elapsed="8.278712"/>
+</test>
+<test id="s1-s1-s1-s1-t14" name="CT014 - Visualizar a opcao conquiste planos" line="63">
+<kw name="Abrir App" owner="config" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://127.0.0.1:4723</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION}</arg>
+<arg>appActivity=${ANDROID_APP_ACTIVITY}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-05-30T17:08:18.492055" elapsed="6.630426"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:08:18.492055" elapsed="6.630426"/>
+</kw>
+<kw name="Dado que o cliente acessou a pagina inicial" owner="homePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:08:26.100087" level="INFO">xpath criteria: //android.widget.ScrollView/android.view.View[1]</msg>
+<arg>${ICONE_PESSOA}</arg>
+<arg>10</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-05-30T17:08:25.122481" elapsed="0.977606"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:08:25.122481" elapsed="0.977606"/>
+</kw>
+<kw name="Entao ele deve visualizar o botao conquiste planos" owner="homePage">
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:08:26.229514" level="INFO">xpath criteria: //android.view.View[contains(@content-desc,"Conquiste planos futuros")]</msg>
+<arg>${BOTAO_CONQUISTE_PLANOS}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2024-05-30T17:08:26.100087" elapsed="0.129427"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:08:26.100087" elapsed="0.129427"/>
+</kw>
+<kw name="Teardown" owner="config" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-05-30T17:08:26.229514" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2024-05-30T17:08:26.229514" elapsed="0.432309"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:08:26.229514" elapsed="0.432309"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:08:18.492055" elapsed="8.169768"/>
+</test>
+<test id="s1-s1-s1-s1-t15" name="CT015 - Visualizar a opcao WhatsApp" line="67">
+<kw name="Abrir App" owner="config" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://127.0.0.1:4723</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION}</arg>
+<arg>appActivity=${ANDROID_APP_ACTIVITY}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-05-30T17:08:26.661823" elapsed="6.634557"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:08:26.661823" elapsed="6.634557"/>
+</kw>
+<kw name="Dado que o cliente acessou a pagina inicial" owner="homePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:08:34.272356" level="INFO">xpath criteria: //android.widget.ScrollView/android.view.View[1]</msg>
+<arg>${ICONE_PESSOA}</arg>
+<arg>10</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-05-30T17:08:33.296380" elapsed="0.975976"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:08:33.296380" elapsed="0.975976"/>
+</kw>
+<kw name="Entao ele deve visualizar a opcao WhatsApp" owner="homePage">
+<kw name="Swipe By Percent" owner="AppiumLibrary">
+<arg>50</arg>
+<arg>50</arg>
+<arg>50</arg>
+<arg>-75</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" start="2024-05-30T17:08:34.272356" elapsed="1.437278"/>
+</kw>
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:08:37.062437" level="INFO">xpath criteria: //android.view.View[contains(@content-desc,"WhatsApp")]</msg>
+<arg>${BOTAO_WHATSAPP}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2024-05-30T17:08:35.709634" elapsed="1.352803"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:08:34.272356" elapsed="2.790081"/>
+</kw>
+<kw name="Teardown" owner="config" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-05-30T17:08:37.062437" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2024-05-30T17:08:37.062437" elapsed="0.583824"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:08:37.062437" elapsed="0.583824"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:08:26.661823" elapsed="10.984438"/>
+</test>
+<test id="s1-s1-s1-s1-t16" name="CT017 - Visualizar a opcao de indicar amigos" line="71">
+<kw name="Abrir App" owner="config" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://127.0.0.1:4723</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION}</arg>
+<arg>appActivity=${ANDROID_APP_ACTIVITY}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-05-30T17:08:37.646261" elapsed="6.847155"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:08:37.646261" elapsed="6.847155"/>
+</kw>
+<kw name="Dado que o cliente acessou a pagina inicial" owner="homePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:08:45.479488" level="INFO">xpath criteria: //android.widget.ScrollView/android.view.View[1]</msg>
+<arg>${ICONE_PESSOA}</arg>
+<arg>10</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-05-30T17:08:44.493416" elapsed="0.986072"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:08:44.493416" elapsed="0.986072"/>
+</kw>
+<kw name="Entao ele deve visualizar a opcao indique seus amigos" owner="homePage">
+<kw name="Swipe By Percent" owner="AppiumLibrary">
+<arg>50</arg>
+<arg>50</arg>
+<arg>50</arg>
+<arg>-75</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" start="2024-05-30T17:08:45.479488" elapsed="1.367661"/>
+</kw>
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2024-05-30T17:08:48.245552" level="INFO">xpath criteria: //android.view.View[contains(@content-desc,"Indique seus amigos")]</msg>
+<arg>${BOTAO_INDIQUE_AMIGOS}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2024-05-30T17:08:46.847149" elapsed="1.398403"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:08:45.479488" elapsed="2.766064"/>
+</kw>
+<kw name="Teardown" owner="config" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-05-30T17:08:48.254789" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2024-05-30T17:08:48.254789" elapsed="0.512091"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:08:48.253673" elapsed="0.513207"/>
+</kw>
+<status status="PASS" start="2024-05-30T17:08:37.646261" elapsed="11.120619"/>
+</test>
+<status status="PASS" start="2024-05-30T17:06:12.684165" elapsed="156.082715"/>
+</suite>
+<status status="PASS" start="2024-05-30T17:06:12.684165" elapsed="156.091018"/>
+</suite>
+<status status="PASS" start="2024-05-30T17:06:12.684165" elapsed="156.091018"/>
+</suite>
+<status status="PASS" start="2024-05-30T17:06:12.651313" elapsed="156.123870"/>
+</suite>
+<statistics>
+<total>
+<stat pass="16" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="16" fail="0" skip="0" id="s1" name="Nuclone">Nuclone</stat>
+<stat pass="16" fail="0" skip="0" id="s1-s1" name="Android">Nuclone.Android</stat>
+<stat pass="16" fail="0" skip="0" id="s1-s1-s1" name="Feature">Nuclone.Android.Feature</stat>
+<stat pass="16" fail="0" skip="0" id="s1-s1-s1-s1" name="homeTest">Nuclone.Android.Feature.homeTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

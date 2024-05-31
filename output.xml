@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-05-31T11:05:15.935275" rpa="false" schemaversion="5">
+<suite id="s1" name="doacaoTest" source="c:\academy\Nuclone\android\feature\doacaoTest.robot">
+<test id="s1-t1" name="CT001 - Existir opcao de doacao" line="10">
+<kw name="Abrir App" owner="config" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://127.0.0.1:4723</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION}</arg>
+<arg>appActivity=${ANDROID_APP_ACTIVITY}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-05-31T11:05:16.129930" elapsed="7.008118"/>
+</kw>
+<status status="PASS" start="2024-05-31T11:05:16.129930" elapsed="7.008118"/>
+</kw>
+<kw name="Dado que o cliente acessou a pagina inicial" owner="homePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-05-31T11:05:24.123287" level="INFO">xpath criteria: //android.widget.ScrollView/android.view.View[1]</msg>
+<arg>${ICONE_PESSOA}</arg>
+<arg>10</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-05-31T11:05:23.138048" elapsed="0.985239"/>
+</kw>
+<status status="PASS" start="2024-05-31T11:05:23.138048" elapsed="0.985239"/>
+</kw>
+<kw name="Entao deve conseguir visualizar a opcao doacao" owner="doacaoPage">
+<kw name="Swipe By Percent" owner="AppiumLibrary">
+<arg>50</arg>
+<arg>50</arg>
+<arg>-75</arg>
+<arg>50</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" start="2024-05-31T11:05:24.131297" elapsed="1.354945"/>
+</kw>
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2024-05-31T11:05:26.219664" level="INFO">xpath criteria: //android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[4]</msg>
+<arg>${DOACAO}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2024-05-31T11:05:25.486242" elapsed="0.733422"/>
+</kw>
+<status status="PASS" start="2024-05-31T11:05:24.131297" elapsed="2.096374"/>
+</kw>
+<kw name="Teardown" owner="config" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-05-31T11:05:26.227671" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2024-05-31T11:05:26.227671" elapsed="0.645879"/>
+</kw>
+<status status="PASS" start="2024-05-31T11:05:26.227671" elapsed="0.645879"/>
+</kw>
+<status status="PASS" start="2024-05-31T11:05:16.129930" elapsed="10.743620"/>
+</test>
+<status status="PASS" start="2024-05-31T11:05:15.943269" elapsed="10.930281"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="doacaoTest">doacaoTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
